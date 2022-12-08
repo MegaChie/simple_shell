@@ -11,4 +11,6 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
+
+#define bufFlush -1
 #endif someShell
