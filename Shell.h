@@ -13,4 +13,4 @@
 #include <errno.h>
 
 #define bufFlush -1
-#endif someShell
+#endif
