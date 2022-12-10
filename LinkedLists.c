@@ -2,7 +2,7 @@
 /**
  * 
  */
-list_t *add_node(list_t **head, const char *str, int num)//add to h file
+list_t *add_node(list_t **head, const char *str, int num)
 {
 	list_t *newHead;
 
@@ -34,7 +34,7 @@ list_t *add_node(list_t **head, const char *str, int num)//add to h file
 /**
  * 
  */
-list_t *add_node_end(list_t **head, const char *str, int num)//add to h file
+list_t *add_node_end(list_t **head, const char *str, int num)
 {
 	list_t *newNode, *node;
 
@@ -76,7 +76,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)//add to h file
 /**
  * 
  */
-size_t print_list_str(const list_t *h)//add to h file
+size_t print_list_str(const list_t *h)
 {
 	size_t count = 0;
 
@@ -93,7 +93,7 @@ size_t print_list_str(const list_t *h)//add to h file
 /**
  * 
  */
-int delete_node_at_index(list_t **head, unsigned int index)//add to h file
+int delete_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *previousNode;
 	unsigned int count = 0;
@@ -130,7 +130,7 @@ int delete_node_at_index(list_t **head, unsigned int index)//add to h file
 /**
  * 
  */
-void free_list(list_t **headPointer)//add to h file
+void free_list(list_t **headPointer)
 {
 	list_t *node, *nextNode, *head;
 
