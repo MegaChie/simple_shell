@@ -61,6 +61,5 @@ char *_strchr(char *s, char c)
 			return (s);//return value here
 		}
 		} while (*s++ != '\0');
-
 	return (NULL);//return value here
 }
