@@ -42,12 +42,13 @@ list_t *add_node_end(list_t **head, const char *str, int num)//add to h file
 	{
 		return (0);//return value here
 	}
-	node = head;
+	node = *head;
 	newNode = malloc(sizeof(list_t));
 	if (newNode == 0)
 	{
 		return (0);
 	}
+	_memset((void *)newNode, 0, sizeof(list_t));
 	newNode->num = num;
 	if (str)
 	{
@@ -146,5 +147,5 @@ void free_list(list_t **headPointer)//add to h file
 		free(node);
 		node = nextNode;
 	}
-	*headPointer = 0;
+	*headPointer = NULL;
 }
