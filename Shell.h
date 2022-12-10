@@ -23,4 +23,7 @@ void _eputs(char *str);
 int _eputchar (char c);
 int _putfd(char c, int fileDire);
 int _putsfd(char *str, int fileDire);
+char *_strncpy(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n);
+char *_strchr(char *s, char c);
 #endif

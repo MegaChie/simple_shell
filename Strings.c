@@ -6,7 +6,7 @@
  * @n: number of bytes to copy
  * Return: pointer to the resulting string
  */
-char *_strncpy(char *dest, char *src, int n)//add to h file
+char *_strncpy(char *dest, char *src, int n)
 {
 	int raws = 0, collumns;
 	char *s = dest;
@@ -31,7 +31,7 @@ char *_strncpy(char *dest, char *src, int n)//add to h file
 /**
  * 
  */
-char *_strncat(char *dest, char *src, int n)//add to h file
+char *_strncat(char *dest, char *src, int n)
 {
 	int raws = 0, collumns = 0;
 	char *s = dest;
@@ -53,7 +53,7 @@ char *_strncat(char *dest, char *src, int n)//add to h file
 /**
  * 
  */
-char *_strchr(char *s, char c)//add to h file
+char *_strchr(char *s, char c)
 {
 	do {
 		if (*s == c)
