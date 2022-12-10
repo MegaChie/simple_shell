@@ -59,7 +59,6 @@ int _putfd(char c, int fileDire)
 
 /**
  * Return: 0 or count value
- * 
  */
 int _putsfd(char *str, int fileDire)
 {
