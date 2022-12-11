@@ -45,4 +45,7 @@ char *_strdup(const char *str);
 void _puts(char *str);
 int _putchar(char c);
 int bfree(void **ptr);
+char *_memset(char *s, char b, unsigned int n);
+void ffree(char **pp);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
