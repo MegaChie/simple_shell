@@ -44,4 +44,5 @@ char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 void _puts(char *str);
 int _putchar(char c);
+int bfree(void **ptr);
 #endif
