@@ -36,4 +36,12 @@ char **list_to_strings(list_t *head);
 size_t print_list(const list_t *h);
 list_t *node_starts_with(list_t *node, char *prefix, char c);
 ssize_t get_node_index(list_t *head, list_t *node);
+int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
+char *starts_with(const char *haystack, const char *needle);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+char *_strdup(const char *str);
+void _puts(char *str);
+int _putchar(char c);
 #endif

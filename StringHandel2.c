@@ -2,7 +2,7 @@
 /**
  * 
  */
-char *_strcpy(char *dest, char *src)//add to h file
+char *_strcpy(char *dest, char *src)
 {
 	int count = 0;
 	if (dest == src || src == 0)
@@ -21,7 +21,7 @@ char *_strcpy(char *dest, char *src)//add to h file
 /**
  * 
  */
-char *_strdup(const char *str)//add to h file
+char *_strdup(const char *str)
 {
 	int length = 0;
 	char *returnValue;
@@ -46,7 +46,7 @@ char *_strdup(const char *str)//add to h file
 /**
  * 
  */
-void _puts(char *str)//add to h file
+void _puts(char *str)
 {
 	int count = 0;
 
@@ -64,11 +64,11 @@ void _puts(char *str)//add to h file
 /**
  * 
  */
-int _putchar(char c)//add to h file
+int _putchar(char c)
 {
 	static int count = 0;
-	static char buffer = [writeBufferSize];//define in h file
-
+	static char buffer[writeBufferSize];
+	
 	if (c == bufFlush || count >= writeBufferSize)
 	{
 		write(1, buffer, i);
