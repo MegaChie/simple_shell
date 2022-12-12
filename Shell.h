@@ -20,6 +20,10 @@
 
 /* functions */
 void _eputs(char *str);
+int interactive(info_t *info);
+int is_delim(char c, char *delim);
+int _isalpha(int c);
+int _atoi(char *s);
 int _eputchar (char c);
 int _putfd(char c, int fileDire);
 int _putsfd(char *str, int fileDire);

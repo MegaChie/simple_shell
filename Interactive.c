@@ -2,7 +2,7 @@
 /**
  * 
  */
-int interactive(info_t *info)//add to h file
+int interactive(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
@@ -10,7 +10,7 @@ int interactive(info_t *info)//add to h file
 /**
  * 
  */
-int is_delim(char c, char *delim)//add to h file
+int is_delim(char c, char *delim)
 {
 	while (*delim)
 	{
@@ -24,7 +24,7 @@ int is_delim(char c, char *delim)//add to h file
 /**
  * 
  */
-int _isalpha(int c)//add to h file
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
@@ -38,14 +38,14 @@ int _isalpha(int c)//add to h file
 /**
  * 
  */
-int _atoi(char *s)//add to h file
+int _atoi(char *s)
 {
 	int count, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
 	for (count = 0; s[count] != '\0' && flag != 2; count++)
 	{
-		if (s[count] == -)
+		if (s[count] == '-')
 		{
 			sign *= -1;
 		}
