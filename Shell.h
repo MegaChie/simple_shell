@@ -17,10 +17,18 @@
 #define infoStart {NULL, NULL, NULL, 0, 0, 0, 0,
  NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
 #define writeBufferSize 1024
+#define cmdOr 1
+#define cmdAnd 2
+#define cmdChain 3
 
 /* functions */
 void _eputs(char *str);
 int interactive(info_t *info);
+int replace_string(char **old, char *new);
+int replace_vars(info_t *info);
+int replace_alias(info_t *info);
+void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len);
+int is_chain(info_t *info, char *buf, size_t *p);
 int is_delim(char c, char *delim);
 int _isalpha(int c);
 int _atoi(char *s);
