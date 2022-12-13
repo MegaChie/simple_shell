@@ -27,6 +27,10 @@
 /* functions */
 void _eputs(char *str);
 int interactive(info_t *info);
+void fork_cmd(info_t *info);
+void find_cmd(info_t *info);
+int find_builtin(info_t *info);
+int hsh(info_t *info, char **av);
 void sigintHandler(__attribute__((unused))int sig_num);
 int _getline(info_t *info, char **ptr, size_t *length);
 ssize_t read_buf(info_t *info, char *buf, size_t *i);
