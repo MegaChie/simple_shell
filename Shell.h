@@ -20,10 +20,18 @@
 #define cmdOr 1
 #define cmdAnd 2
 #define cmdChain 3
+#define cmdNormal
+#define useGetLine 0
+#define readBufferSize 1024
 
 /* functions */
 void _eputs(char *str);
 int interactive(info_t *info);
+void sigintHandler(__attribute__((unused))int sig_num);
+int _getline(info_t *info, char **ptr, size_t *length);
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
+ssize_t get_input(info_t *info);
+ssize_t input_buf(info_t *info, char **buf, size_t *len);
 int replace_string(char **old, char *new);
 int replace_vars(info_t *info);
 int replace_alias(info_t *info);
