@@ -1,6 +1,10 @@
 #include "Shell.h"
 /**
- * 
+ * is_chain - check code.
+ * @info: list pointer
+ * @buf: char pointer
+ * @p: list pointer
+ * Return: 0 or 1
  */
 int is_chain(info_t *info, char *buf, size_t *p)
 {
@@ -25,13 +29,18 @@ int is_chain(info_t *info, char *buf, size_t *p)
 	}
 	else
 	{
-		return (0);//return value here
+		return (0);
 	}
 	*pointer = place;
-	return (1);//return value here
+	return (1);
 }
 /**
- * 
+ * check_chain - check code.
+ * @info: list pointer
+ * @buf: char pointer
+ * @p: list pointer
+ * @i: list variable
+ * @len: list variable
  */
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
@@ -56,7 +65,9 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 	*pointer = place;
 }
 /**
- * 
+ * replace_alias - check code.
+ * @info: list variable
+ * Return: 0 or 1
  */
 int replace_alias(info_t *info)
 {
@@ -69,7 +80,7 @@ int replace_alias(info_t *info)
 		node = node_starts_with(info->alias, info->argv[0], '=');
 		if (node == 0)
 		{
-			return (0);//return value here
+			return (0);
 		}
 		free(info->arg[0]);
 		pointer = _strchr(node->str, '=');
@@ -84,10 +95,12 @@ int replace_alias(info_t *info)
 		}
 		info->argv[0] = pointer;
 	}
-	return (1);//return value here
+	return (1);
 }
 /**
- * 
+ * replace_vars - check code.
+ * @info: list variable
+ * Return: 0
  */
 int replace_vars(info_t *info)
 {
@@ -123,15 +136,18 @@ int replace_vars(info_t *info)
 		replace_string(&info->argv[count], _strdup(""));
 
 	}
-	return (0);//return value here
+	return (0);
 }
 
 /**
- * 
+ * replace_string - check code.
+ * @old: char double pointer
+ * @new: char pointer
+ * Return: 1
  */
 int replace_string(char **old, char *new)
 {
 	free(*old);
 	*old = new;
-	return (1);//return value here
+	return (1);
 }
