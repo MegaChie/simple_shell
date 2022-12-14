@@ -37,7 +37,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * 
+ *
  */
 ssize_t get_input(info_t *info)
 {
@@ -72,14 +72,14 @@ ssize_t get_input(info_t *info)
 			info->cmdBufferType = cmdNormal;
 		}
 		*bufferPointer = pointer;
-		return (_strlen(pointer))
+		return (_strlen(pointer));
 	}
 	*bufferPointer = buffer;
 	return (count);//return value here
 }
 
 /**
- * 
+ *
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
@@ -98,7 +98,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * 
+ *
  */
 int _getline(info_t *info, char **ptr, size_t *length)
 {
@@ -141,9 +141,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	raw = k;
 	pointer = newPointer;
 	if (length)
-	{
 		*length = sign;
-	}
 	*ptr = pointer;
 	return (sign);//return value here
 }
