@@ -3,7 +3,7 @@
  * add_node - check code.
  * @head: list double pointer
  * @str: char pointer
- * @sum: integer variable
+ * @num: integer variable
  * Return: 0 or newHead
  */
 list_t *add_node(list_t **head, const char *str, int num)
@@ -27,7 +27,7 @@ list_t *add_node(list_t **head, const char *str, int num)
 		if (newHead->str == 0)
 		{
 			free(newHead);
-			return (0)
+			return (0);
 		}
 	}
 	newHead->next = *head;
@@ -39,7 +39,7 @@ list_t *add_node(list_t **head, const char *str, int num)
  * add_node_end - check code.
  * @head:  list double pointer
  * @str: char pointer
- * @sum: integer variable
+ * @num: integer variable
  * Return: 0 or newNode
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
