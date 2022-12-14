@@ -1,6 +1,6 @@
 #include "Shell.h"
 /**
- * 
+ *
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -134,7 +134,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		_strncat(newPointer, buffer + raw, k - raw);
 	}
 	else
-	{	
+	{
 		_strncpy(newPointer, buffer + raw, k - raw + 1);
 	}
 	sign += k - raw;
@@ -147,7 +147,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * 
+ *
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
