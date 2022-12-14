@@ -1,6 +1,10 @@
 #include "Shell.h"
 /**
- * 
+ * add_node - check code.
+ * @head: list double pointer
+ * @str: char pointer
+ * @sum: integer variable
+ * Return: 0 or newHead
  */
 list_t *add_node(list_t **head, const char *str, int num)
 {
@@ -23,16 +27,20 @@ list_t *add_node(list_t **head, const char *str, int num)
 		if (newHead->str == 0)
 		{
 			free(newHead);
-			return (0);//return value here
+			return (0)
 		}
 	}
 	newHead->next = *head;
 	*head = newHead;
-	return (newHead);//return value here
+	return (newHead);
 }
 
 /**
- * 
+ * add_node_end - check code.
+ * @head:  list double pointer
+ * @str: char pointer
+ * @sum: integer variable
+ * Return: 0 or newNode
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
@@ -40,7 +48,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 
 	if (head == 0)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	node = *head;
 	newNode = malloc(sizeof(list_t));
@@ -74,7 +82,9 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	return (newNode);
 }
 /**
- * 
+ * print_list_str - check code.
+ * @h: list pointer
+ * Return: counter value
  */
 size_t print_list_str(const list_t *h)
 {
@@ -87,11 +97,14 @@ size_t print_list_str(const list_t *h)
 		h = h->next;
 		count++;
 	}
-	return (count);//return valur here
+	return (count);
 }
 
 /**
- * 
+ * delete_node_at_index - check code.
+ * @head: list double pointer
+ * @index: unsigned integer variable
+ * Return: 0 or 1
  */
 int delete_node_at_index(list_t **head, unsigned int index)
 {
@@ -100,7 +113,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 
 	if (!head || !*head)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	if (index)
 	{
@@ -108,7 +121,7 @@ int delete_node_at_index(list_t **head, unsigned int index)
 		*head = (*head)->next;
 		free(node->str);
 		free(node);
-		return (1);//return value here
+		return (1);
 	}
 	node = *head;
 	while (node)
@@ -128,7 +141,8 @@ int delete_node_at_index(list_t **head, unsigned int index)
 }
 
 /**
- * 
+ * free_list - check code.
+ * @headPointer: list double pointer
  */
 void free_list(list_t **headPointer)
 {
