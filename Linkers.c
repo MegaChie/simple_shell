@@ -74,8 +74,8 @@ int replace_alias(info_t *info)
 	int count;
 	list_t *node;
 	char *pointer;
-	
-	for (count = 0;count < 10; count++)	
+
+	for (count = 0; count < 10; count++)
 	{
 		node = node_starts_with(info->alias, info->argv[0], '=');
 		if (node == 0)
