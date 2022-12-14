@@ -1,6 +1,10 @@
 #include "Shell.h"
 /**
- *
+ * input_buf - check code.
+ * @info: pointer
+ * @buf: pointer
+ * @len: pointer
+ * Return: count value
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -33,11 +37,13 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 			build_history_list(info, *buf, info->histcount++);
 		}
 	}
-	return (count);//return value here
+	return (count);
 }
 
 /**
- *
+ * get_input - check code.
+ * @info: pointer
+ * Return: -1 or count value
  */
 ssize_t get_input(info_t *info)
 {
@@ -50,7 +56,7 @@ ssize_t get_input(info_t *info)
 	count = input_buf(info, &buffer, &length);
 	if (count == -1)
 	{
-		return (-1);//return value here
+		return (-1);
 	}
 	if (len)
 	{
@@ -75,11 +81,15 @@ ssize_t get_input(info_t *info)
 		return (_strlen(pointer));
 	}
 	*bufferPointer = buffer;
-	return (count);//return value here
+	return (count);
 }
 
 /**
- *
+ * read_buf - check code.
+ * @info: pointer
+ * @buf: pointer
+ * @i: pointer
+ * Return: 0 or count value
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
@@ -87,18 +97,22 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 
 	if (*i)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	count = read(info->readfd, buf, readBufferSize);
 	if (count >= 0)
 	{
 		*i = count;
 	}
-	return (count);//return value here
+	return (count);
 }
 
 /**
- *
+ * _getline - check code.
+ * @info: pointer
+ * @ptr: pointer
+ * @length: pointer
+ * Return: -1 or sign value
  */
 int _getline(info_t *info, char **ptr, size_t *length)
 {
@@ -120,7 +134,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	r = read_buf(info, buffer, &len);
 	if (count == -1 || (count == 0 && len == 0))
 	{
-		return (-1);//return value here
+		return (-1);
 	}
 	c = _strchr(buffer + raw, '\n');
 	k = c ? 1 + (unsigned int)(c - buffer) : len;
@@ -143,11 +157,12 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (length)
 		*length = sign;
 	*ptr = pointer;
-	return (sign);//return value here
+	return (sign);
 }
 
 /**
- *
+ * sigintHandler - check code.
+ * @sig_num: integer variable
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
