@@ -1,6 +1,8 @@
 #include "Shell.h"
 /**
- * 
+ * _strlen - check code.
+ * @s: char pointer
+ * Return: 0 or count value
  */
 int _strlen(char *s)
 {
@@ -8,17 +10,20 @@ int _strlen(char *s)
 
 	if (s == 0)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	while (*s++)
 	{
 		count++;
 	}
-	return (count);//return value here
+	return (count);
 }
 
 /**
- * 
+ * _strcmp - check code.
+ * @s1: char pointer
+ * @s2: char pointer
+ * Return: subtractions values, 0 or bit-wise comparison
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -26,23 +31,26 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (*s1 != *s2)
 		{
-			return (*s1 - *s2);//return value here
+			return (*s1 - *s2);
 		}
 		s1++;
 		s2++;
 	}
 	if (*s1 == *s2)
 	{
-		return (0);//reruen value here
+		return (0);
 	}
 	else
 	{
-		return (*s1 < *s2 ? -1 : 1);//return value here
+		return (*s1 < *s2 ? -1 : 1);
 	}
 }
 
 /**
- * 
+ * starts_with - check code.
+ * @haystack: constant char pointer
+ * @needle: constant char pointer
+ * Return: 0 or function value
  */
 char *starts_with(const char *haystack, const char *needle)
 {
@@ -57,7 +65,10 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
- * 
+ * _strcat - check code.
+ * @dest: char pointer
+ * @src: char pointer
+ * Return: returned value
  */
 char *_strcat(char *dest, char *src)
 {
@@ -72,5 +83,5 @@ char *_strcat(char *dest, char *src)
 		*dest++ = *src++;
 	}
 	*dest = *src;
-	return (ret);//return value here
+	return (returned);
 }

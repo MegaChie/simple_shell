@@ -1,6 +1,10 @@
 #include "Shell.h"
 /**
- * 
+ * _memset - check code.
+ * @s: char pointre
+ * @b: char variable
+ * @n: interger variable
+ * Return: s value
  */
 char *_memset(char *s, char b, unsigned int n)
 {
@@ -10,11 +14,12 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 		s[count] = b;
 	}
-	return (s);//return value here
+	return (s);
 }
 
 /**
- * 
+ * ffree - check code.
+ * @pp: char double pointer
  */
 void ffree(char **pp)
 {
@@ -32,7 +37,11 @@ void ffree(char **pp)
 }
 
 /**
- * 
+ * _realloc - check code.
+ * @ptr: pointer
+ * @old_size: unsigned integer variable
+ * @new_size: unsigned integer variable
+ * Return: functions values, ptr value, 0 or pointer value
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -40,20 +49,20 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (ptr == 0)
 	{
-		return (malloc(new_size));//return value here
+		return (malloc(new_size))
 	}
 	if (new_size == 0)
 	{
-		return (free(ptr), NULL);//return value here
+		return (free(ptr), NULL);
 	}
 	if (new_size == old_size)
 	{
-		return (ptr);//return value here
+		return (ptr);
 	}
 	pointer = malloc(new_size);
 	if (pointer == 0)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	old_size = old_size < new_size ? old_size : new_size;
 	while (old_size--)
@@ -61,5 +70,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		pointer[old_size] = ((char *)ptr)[old_size];
 	}
 	free(ptr);
-	return (pointer);//return value here
+	return (pointer);
 }

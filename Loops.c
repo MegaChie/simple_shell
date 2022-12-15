@@ -1,6 +1,9 @@
 #include "Shell.h"
 /**
- * 
+ * hsh - check code.
+ * @info; list variable
+ * @av: char double pointer
+ * Return: buildReturn value
  */
 int hsh(info_t *info, char **av)
 {
@@ -45,11 +48,13 @@ int hsh(info_t *info, char **av)
 		}
 		exit(info->err_num);
 	}
-	return (buildReturn);//return value here
+	return (buildReturn);
 }
 
 /**
- * 
+ * find_builtin - check code.
+ * @info: list variable
+ * Return: builtInReturn value
  */
 int find_builtin(info_t *info)
 {
@@ -78,7 +83,8 @@ int find_builtin(info_t *info)
 	return (builtInReturn);
 }
 /**
- * 
+ * find_cmd - check code.
+ * @info: list variable
  */
 void find_cmd(info_t *info)
 {
@@ -124,7 +130,8 @@ void find_cmd(info_t *info)
 }
 
 /**
- * 
+ * fork_cmd - check code.
+ * @info: list variable
  */
 void fork_cmd(info_t *info)
 {

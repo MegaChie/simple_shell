@@ -1,6 +1,8 @@
 #include "Shell.h"
 /**
- * 
+ * bfree - check code.
+ * @ptr: double pointer
+ * Return: 1 or 0
  */
 int bfree(void **ptr)
 {
@@ -8,7 +10,7 @@ int bfree(void **ptr)
 	{
 		free(*ptr);
 		*ptr = NULL;
-		return (1);//return value here
+		return (1);
 	}
-	return (0);//return value here
+	return (0);
 }

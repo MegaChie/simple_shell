@@ -1,6 +1,7 @@
 #include "Shell.h"
 /**
- * 
+ * _eputs - check code.
+ * @str: char pointer
  */
 void _eputs(char *str)
 {
@@ -18,6 +19,8 @@ void _eputs(char *str)
 }
 
 /**
+ * _eputchar - check code.
+ * @c: char varible
  * Return: 1
  */
 int _eputchar (char c)
@@ -38,6 +41,9 @@ int _eputchar (char c)
 }
 
 /**
+ * _putfd - check code.
+ * @c: char variable
+ * @fileDire: intger variable
  * Return: 1
  */
 int _putfd(char c, int fileDire)
@@ -58,6 +64,9 @@ int _putfd(char c, int fileDire)
 }
 
 /**
+ * _putsfd - check code.
+ * @str: char pointer
+ * @fileDire: integer variable
  * Return: 0 or count value
  */
 int _putsfd(char *str, int fileDire)

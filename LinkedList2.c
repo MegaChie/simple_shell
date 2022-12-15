@@ -1,6 +1,8 @@
 #include "Shell.h"
 /**
- * 
+ * list_len - check code
+ * @h: list pointer
+ * Return: count value
  */
 size_t list_len(const list_t *h)
 {
@@ -11,11 +13,13 @@ size_t list_len(const list_t *h)
 		h = h->next;
 		count++;
 	}
-	return (count);//return value here
+	return (count);
 }
 
 /**
- * 
+ * list_to_strings - check code.
+ * @head: list variable
+ * Rerurn: 0 or strs value
  */
 char **list_to_strings(list_t *head)
 {
@@ -26,7 +30,7 @@ char **list_to_strings(list_t *head)
 
 	if (!head || !count)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (strs == 0)
@@ -49,11 +53,13 @@ char **list_to_strings(list_t *head)
 		strs[count] = str;
 	}
 	strs[count] = NULL;
-	return (strs);//return value here
+	return (strs);
 }
 
 /**
- * 
+ * print_list - check code.
+ * @h: list variable
+ * Return: count value
  */
 size_t print_list(const list_t *h)
 {
@@ -69,10 +75,14 @@ size_t print_list(const list_t *h)
 		h = h->next;
 		count++;
 	}
-	return (count);//retuen value here
+	return (count);
 }
 /**
- * 
+ * node_starts_with - check code.
+ * @node: list variable
+ * @prefix: char pointer
+ * @c: char variable
+ * Return: node value or 0
  */
 list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
@@ -83,15 +93,18 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 		p = starts_with(node->str, prefix);
 		if (pointer && ((c == -1) || (*pointer == c)))
 		{
-			return (node);//return value here
+			return (node);
 		}
 		node = node->next;
 	}
-	return (0);//return value here
+	return (0);
 }
 
 /**
- * 
+ * get_node_index - check code.
+ * @head: list variable
+ * @node: list variable
+ * Return: count value or -1
  */
 ssize_t get_node_index(list_t *head, list_t *node)
 {
@@ -101,10 +114,10 @@ ssize_t get_node_index(list_t *head, list_t *node)
 	{
 		if (head == node)
 		{
-			return (count);//return value here
+			return (count);
 		}
 		head = head->next;
 		count++;
 	}
-	return (-1);//return value here
+	return (-1);
 }

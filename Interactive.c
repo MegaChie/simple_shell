@@ -1,6 +1,8 @@
 #include "Shell.h"
 /**
- * 
+ * interactive - check code.
+ * @info: list variable
+ * Return: 1 or 0
  */
 int interactive(info_t *info)
 {
@@ -16,27 +18,31 @@ int is_delim(char c, char *delim)
 	{
 		if (*delim++ == c)
 		{
-			return (1);//return value here
+			return (1);
 		}
 	}
-	return (0);//return value here
+	return (0);
 }
 /**
- * 
+ * _isalpha - check code.
+ * @c: integer variable
+ * Return: 1 or 0
  */
 int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-		return (1);//return value here
+		return (1);
 	}
 	else
 	{
-		return (0);//return value here
+		return (0);
 	}
 }
 /**
- * 
+ * atio - check code.
+ * @s: char pointer
+ * Return: output value
  */
 int _atoi(char *s)
 {
@@ -68,5 +74,5 @@ int _atoi(char *s)
 	{
 		output = result;
 	}
-	return (output);//return value here
+	return (output);
 }
