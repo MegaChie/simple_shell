@@ -25,28 +25,28 @@ char *_strcpy(char *dest, char *src)
 /**
  * _strdup - check code.
  * @str: constant char pointer
- * Return: 0 or returnValue value
+ * Return: 0 or returnedValue value
  */
 char *_strdup(const char *str)
 {
 	int length = 0;
-	char *returnValue;
+	char *returnedValue;
 
 	if (str == 0)
 	{
 		return (0);
 	}
 	length = strlen(str);
-	returnValue = malloc(sizeof(char) * (length + 1));
-	if (returnValue == 0)
+	returnedValue = malloc(sizeof(char) * (length + 1));
+	if (returnedValue == 0)
 	{
 		return (0);
 	}
 	for (length++; length--;)
 	{
-		returnValue[length] = *--str;
+		returnedValue[length] = *--str;
 	}
-	return (returnValue);
+	return (returnedValue);
 }
 
 /**
@@ -75,7 +75,7 @@ void _puts(char *str)
  */
 int _putchar(char c)
 {
-	static int count = 0;
+	static int count = NULL;
 	static char buffer[writeBufferSize];
 
 	if (c == bufFlush || count >= writeBufferSize)

@@ -37,15 +37,13 @@ int hsh(info_t *info, char **av)
 	write_history(info);
 	free_info(info, 1);
 	if (!interactive(info) && info->status)
-	{
 		exit(info->status);
-	}
+
 	if (buildReturn == -2)
 	{
 		if (info->err_num == -1)
-		{
 			exit(info->status);
-		}
+
 		exit(info->err_num);
 	}
 	return (buildReturn);
@@ -141,7 +139,7 @@ void fork_cmd(info_t *info)
 	if (childPId == -1)
 	{
 		perror("Error:");
-		return;	
+		return;
 	}
 	if (childPId == 0)
 	{
