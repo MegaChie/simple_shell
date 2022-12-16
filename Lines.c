@@ -144,13 +144,11 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		return (pointer ? free(pointer), -1 : -1);
 	}
 	if (s)
-	{
 		_strncat(newPointer, buffer + raw, k - raw);
-	}
+
 	else
-	{
 		_strncpy(newPointer, buffer + raw, k - raw + 1);
-	}
+
 	sign += k - raw;
 	raw = k;
 	pointer = newPointer;

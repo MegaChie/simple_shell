@@ -17,7 +17,7 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings - check code.
+ * *list_to_strings - check code.
  * @head: list variable
  * Rerurn: 0 or strs value
  */

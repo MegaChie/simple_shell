@@ -14,9 +14,9 @@
 
 /* values commenly used*/
 #define bufFlush -1 
-#define infoStart 
-    {NULL, NULL, NULL, 0, 0, 0, 0,
-    NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
+#define infoStart
+	{NULL, NULL, NULL, 0, 0, 0, 0,
+		NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
 #define writeBufferSize 1024
 #define cmdOr 1
 #define cmdAnd 2
