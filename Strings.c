@@ -1,10 +1,9 @@
 #include "Shell.h"
 /**
- * _strncpy - copies a string
- * @dest: destination string
- * @src: source string
- * @n: number of bytes to copy
- * Return: pointer to the resulting string
+ * _strncpy - check code.
+ * @dest: char pointer
+ * @src: char pointer
+ * @n: integer variable
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -29,7 +28,11 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
- * 
+ * _strncat - check code.
+ * @dest: char pointer
+ * @src: char pointer
+ * @n: integer variable
+ * Return: s value
  */
 char *_strncat(char *dest, char *src, int n)
 {
@@ -47,11 +50,14 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[raws] = '\0';
 	}
-	return (s);//return value here
+	return (s);
 }
 
 /**
- * 
+ * _strchr - check code.
+ * @s: char pointer
+ * @c: char variable
+ * Return: s or 0
  */
 char *_strchr(char *s, char c)
 {
@@ -61,5 +67,5 @@ char *_strchr(char *s, char c)
 			return (s);//return value here
 		}
 		} while (*s++ != '\0');
-	return (NULL);//return value here
+	return (0);//return value here
 }

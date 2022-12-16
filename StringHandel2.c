@@ -1,13 +1,16 @@
 #include "shell.h"
 /**
- * 
+ * _strcpy - check code.
+ * @dest: char pointer
+ * @src: char pointer
+ * Return: dest value
  */
 char *_strcpy(char *dest, char *src)
 {
 	int count = 0;
 	if (dest == src || src == 0)
 	{
-		return (dest);//return value here
+		return (dest);
 	}
 	while (src[count])
 	{
@@ -15,11 +18,13 @@ char *_strcpy(char *dest, char *src)
 		count++;
 	}
 	dest[count] = 0;
-	return (dest);//return value here
+	return (dest);
 }
 
 /**
- * 
+ * _strdup - check code.
+ * @str: constant char pointer
+ * Return: 0 or returnValue value
  */
 char *_strdup(const char *str)
 {
@@ -34,17 +39,18 @@ char *_strdup(const char *str)
 	returnValue = malloc(sizeof(char) * (length + 1));
 	if (returnValue == 0)
 	{
-		return (0);//return value here
+		return (0);
 	}
 	for (length++; length--;)
 	{
 		returnValue[length] = *--str;
 	}
-	return (returnValue);//return value here
+	return (returnValue);
 }
 
 /**
- * 
+ * _puts - check code.
+ * @str: char pointer
  */
 void _puts(char *str)
 {
@@ -62,7 +68,9 @@ void _puts(char *str)
 }
 
 /**
- * 
+ * _putchar - check code.
+ * @c: char variable
+ * Return: 1
  */
 int _putchar(char c)
 {
@@ -78,5 +86,5 @@ int _putchar(char c)
 	{
 		buffer[count++] = c;
 	}
-	return (1);//return value here
+	return (1);
 }
