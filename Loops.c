@@ -1,7 +1,7 @@
 #include "Shell.h"
 /**
  * hsh - check code.
- * @info; list variable
+ * @info: list variable
  * @av: char double pointer
  * Return: buildReturn value
  */

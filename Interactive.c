@@ -43,7 +43,7 @@ int _isalpha(int c)
 	}
 }
 /**
- * atio - check code.
+ * _atoi - check code.
  * @s: char pointer
  * Return: output value
  */

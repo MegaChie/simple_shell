@@ -4,6 +4,7 @@
  * @dest: char pointer
  * @src: char pointer
  * @n: integer variable
+ * Return: s value
  */
 char *_strncpy(char *dest, char *src, int n)
 {
