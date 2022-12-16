@@ -5,7 +5,7 @@
  * @av: argument vector
  * Return: whatever it returns shoeld be here
  */
-int main (int ac, char **av)
+int main(int ac, char **av)
 {
 	infoTable info[] = { infoStart };
 	int fileDire = 2;

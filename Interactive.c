@@ -10,7 +10,10 @@ int interactive(info_t *info)
 }
 
 /**
- * 
+ * is_delim - check code.
+ * @c: char variable
+ * @delim: char pointer
+ * Return: 1 or 0
  */
 int is_delim(char c, char *delim)
 {

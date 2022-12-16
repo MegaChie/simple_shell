@@ -26,7 +26,7 @@ void _eputs(char *str)
 int _eputchar (char c)
 {
 	static int count;
-	static char buffer [writeBufferSize];
+	static char buffer[writeBufferSize];
 
 	if (c == bufFlush || count >= writeBufferSize)
 	{
@@ -49,7 +49,7 @@ int _eputchar (char c)
 int _putfd(char c, int fileDire)
 {
 	static int count;
-	static char buffer [writeBufferSize];
+	static char buffer[writeBufferSize];
 
 	if (c == bufFlush || count >= writeBufferSize)
 	{
@@ -79,7 +79,7 @@ int _putsfd(char *str, int fileDire)
 	}
 	while (*str)
 	{
-		count+= _putfd(*str++,fileDire);
+		count += _putfd(*str++, fileDire);
 	}
 	return (count);
 }

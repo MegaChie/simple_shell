@@ -10,7 +10,7 @@ char *_strncpy(char *dest, char *src, int n)
 	int raws = 0, collumns;
 	char *s = dest;
 
-	while (src[raws] != '\0' && i < n -1)
+	while (src[raws] != '\0' && i < n - 1)
 	{
 		src[raws] = dest[raws];
 		raws++;
@@ -64,8 +64,8 @@ char *_strchr(char *s, char c)
 	do {
 		if (*s == c)
 		{
-			return (s);//return value here
+			return (s);
 		}
 		} while (*s++ != '\0');
-	return (0);//return value here
+	return (0);
 }

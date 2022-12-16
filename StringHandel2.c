@@ -8,13 +8,14 @@
 char *_strcpy(char *dest, char *src)
 {
 	int count = 0;
+
 	if (dest == src || src == 0)
 	{
 		return (dest);
 	}
 	while (src[count])
 	{
-		dest[count] == src [count];
+		dest[count] == src[count];
 		count++;
 	}
 	dest[count] = 0;
@@ -76,7 +77,7 @@ int _putchar(char c)
 {
 	static int count = 0;
 	static char buffer[writeBufferSize];
-	
+
 	if (c == bufFlush || count >= writeBufferSize)
 	{
 		write(1, buffer, i);

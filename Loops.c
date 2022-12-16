@@ -71,7 +71,7 @@ int find_builtin(info_t *info)
 		{NULL, NULL}
 	};
 
-	for (raw = 0; tableBuild1[raw].type; raw++ )
+	for (raw = 0; tableBuild1[raw].type; raw++)
 	{
 		if (_strcmp(info->argv[0], tableBuild1[raw].type) == 0)
 		{
