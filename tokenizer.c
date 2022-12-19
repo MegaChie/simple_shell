@@ -15,51 +15,34 @@ char **strtow(char *str, char *d)
 		return (NULL);
 	}
 	if (!d)
-	{
 		d = " ";
-	}
 	for (raw = 0; str[raw] != '\0'; raw++)
 	{
 		if (!is_delim(str[raw], d) && (is_delim(str[raw + 1], d) || !str[raw + 1]))
-		{
 			wordCount++;
-		}
 	}
-
 	if (wordCount == 0)
-	{
 		return (NULL);
-	}
 	s = malloc((1 + wordCount) * sizeof(char *));
 	if (!s)
-	{
 		return (NULL);
-	}
 	for (raw = 0, collumn = 0; collumn < wordCount; collumn++)
 	{
 		while (is_delim(str[raw], d))
-		{
 			raw++;
-		}
 		knife = 0;
 		while (!is_delim(str[raw + knife], d) && str[raw + knife])
-		{
 			knife++;
-		}
 		s[collumn] = malloc((knife + 1) * sizeof(char));
 		if (!s[collumn])
 		{
 			for (knife = 0; knife < collumn; knife++)
-			{
 				free(s[knife]);
-			}
 			free(s);
 			return (NULL);
 		}
 		for (munch = 0; munch < knife; munch++)
-		{
 			s[collumn][munch] = str[raw++];
-		}
 		s[collumn][munch] = 0;
 	}
 	s[collumn] = NULL;
