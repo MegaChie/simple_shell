@@ -97,12 +97,12 @@ void find_cmd(info_t *info)
 		info->linecount_flag = 0;
 	}
 	for (raw = 0, collumn = 0; info->arg[raw]; raw++)
-		{
-			if (!is_delim(info->arg[raw], " \t\n"))
-				{
-					collumn++;
-				}
-		}
+	{
+		if (!is_delim(info->arg[raw], " \t\n"))
+			{
+				collumn++;
+			}
+	}
 	if (!collumn)
 	{
 		return;
