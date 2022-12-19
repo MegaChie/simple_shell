@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * main - entry point
+ * main - check code.
  * @ac: arg count
  * @av: arg vector
- *
- * Return: 0 on success, 1 on error
+ * Return: EXIT_FAILURE value or EXIT_SUCCESS value
  */
 int main(int ac, char **av)
 {
@@ -23,7 +22,9 @@ int main(int ac, char **av)
 		if (fd == -1)
 		{
 			if (errno == EACCES)
+			{
 				exit(126);
+			}
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);

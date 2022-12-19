@@ -1,10 +1,8 @@
 #include "shell.h"
-
 /**
- * get_environ - returns the string array copy of our environ
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0
+ * get_environ - check code.
+ * @info: Struct pointer
+ * Return: function value
  */
 char **get_environ(info_t *info)
 {
@@ -18,25 +16,25 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: 1 on delete, 0 otherwise
- * @var: the string env var property
+ * _unsetenv - check code.
+ * @info: Struct pointer
+ * @var: char pointer
+ * Return: 0 or function value 
  */
 int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
-	char *p;
+	char *pointer;
 
 	if (!node || !var)
+	{
 		return (0);
-
+	}
 	while (node)
 	{
-		p = starts_with(node->str, var);
-		if (p && *p == '=')
+		pointer = starts_with(node->str, var);
+		if (pointer && *pointer == '=')
 		{
 			info->env_changed = delete_node_at_index(&(info->env), i);
 			i = 0;
@@ -50,44 +48,45 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - Initialize a new environment variable,
- *             or modify an existing one
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- * @var: the string env var property
- * @value: the string env var value
- *  Return: Always 0
+ * _setenv - check code.
+ * @info: Struct pointer
+ * @var: char pointer
+ * @value: char pointer
+ * Return: 0 or 1
  */
 int _setenv(info_t *info, char *var, char *value)
 {
-	char *buf = NULL;
+	char *buffer = NULL;
 	list_t *node;
-	char *p;
+	char *pointer;
 
 	if (!var || !value)
+	{
 		return (0);
-
-	buf = malloc(_strlen(var) + _strlen(value) + 2);
-	if (!buf)
+	}
+	buffer = malloc(_strlen(var) + _strlen(value) + 2);
+	if (!buffer)
+	{
 		return (1);
-	_strcpy(buf, var);
-	_strcat(buf, "=");
-	_strcat(buf, value);
+	}
+	_strcpy(buffer, var);
+	_strcat(buffer, "=");
+	_strcat(buffer, value);
 	node = info->env;
 	while (node)
 	{
-		p = starts_with(node->str, var);
-		if (p && *p == '=')
+		pointer = starts_with(node->str, var);
+		if (pointer && *pointer == '=')
 		{
 			free(node->str);
-			node->str = buf;
+			node->str = buffer;
 			info->env_changed = 1;
 			return (0);
 		}
 		node = node->next;
 	}
-	add_node_end(&(info->env), buf, 0);
-	free(buf);
+	add_node_end(&(info->env), buffer, 0);
+	free(buffer);
 	info->env_changed = 1;
 	return (0);
 }
