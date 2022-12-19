@@ -19,7 +19,7 @@ char **get_environ(info_t *info)
  * _unsetenv - check code.
  * @info: Struct pointer
  * @var: char pointer
- * Return: 0 or function value 
+ * Return: 0 or function value
  */
 int _unsetenv(info_t *info, char *var)
 {

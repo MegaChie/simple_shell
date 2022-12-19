@@ -78,51 +78,35 @@ char **strtow2(char *str, char d)
 	char **s;
 
 	if (str == NULL || str[0] == 0)
-	{
 		return (NULL);
-	}
 	for (raw = 0; str[raw] != '\0'; raw++)
 	{
 		if ((str[raw] != d && str[raw + 1] == d) ||
 		    (str[raw] != d && !str[raw + 1]) || str[raw + 1] == d)
-		{
 			wordCount++;
-		}
 	}
 	if (wordCount == 0)
-	{
 		return (NULL);
-	}
 	s = malloc((1 + wordCount) * sizeof(char *));
 	if (!s)
-	{
 		return (NULL);
-	}
 	for (raw = 0, collumn = 0; collumn < wordCount; collumn++)
 	{
 		while (str[raw] == d && str[raw] != d)
-		{
 			raw++;
-		}
 		knife = 0;
 		while (str[raw + knife] != d && str[raw + knife] && str[raw + knife] != d)
-		{
 			knife++;
-		}
 		s[collumn] = malloc((knife + 1) * sizeof(char));
 		if (!s[collumn])
 		{
 			for (knife = 0; knife < collumn; knife++)
-			{
 				free(s[knife]);
-			}
 			free(s);
 			return (NULL);
 		}
 		for (munch = 0; munch < knife; munch++)
-		{
 			s[collumn][munch] = str[raw++];
-		}
 		s[collumn][munch] = 0;
 	}
 	s[collumn] = NULL;

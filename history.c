@@ -76,28 +76,18 @@ int read_history(info_t *info)
 	fd = open(fileName, O_RDONLY);
 	free(fileName);
 	if (fd == -1)
-	{
 		return (0);
-	}
 	if (!fstat(fd, &st))
-	{
 		fsize = st.st_size;
-	}
 	if (fsize < 2)
-	{
 		return (0);
-	}
 	buffer = malloc(sizeof(char) * (fsize + 1));
 	if (!buffer)
-	{
 		return (0);
-	}
 	rdlen = read(fd, buffer, fsize);
 	buffer[fsize] = 0;
 	if (rdlen <= 0)
-	{
 		return (free(buffer), 0);
-	}
 	close(fd);
 	for (count = 0; count < fsize; count++)
 		if (buffer[count] == '\n')
@@ -107,15 +97,11 @@ int read_history(info_t *info)
 			last = count + 1;
 		}
 	if (last != count)
-	{
 		build_history_list(info, buffer + last, linecount++);
-	}
 	free(buffer);
 	info->histcount = linecount;
 	while (info->histcount-- >= HIST_MAX)
-	{
 		delete_node_at_index(&(info->history), 0);
-	}
 	renumber_history(info);
 	return (info->histcount);
 }
