@@ -99,9 +99,9 @@ void find_cmd(info_t *info)
 	for (raw = 0, collumn = 0; info->arg[raw]; raw++)
 	{
 		if (!is_delim(info->arg[raw], " \t\n"))
-			{
-				collumn++;
-			}
+		{
+			collumn++;
+		}
 	}
 	if (!collumn)
 	{
