@@ -94,10 +94,22 @@ void find_cmd(info_t *info)
 		info->line_count++;
 		info->linecount_flag = 0;
 	}
+<<<<<<< HEAD
 	for (i = 0, k = 0; info->arg[i]; i++)
 		if (!is_delim(info->arg[i], " \t\n"))
 			k++;
 	if (!k)
+=======
+	for (raw = 0, collumn = 0; info->arg[raw]; raw++)
+	{
+		if (!is_delim(info->arg[raw], " \t\n"))
+			{
+				collumn++;
+			}
+	}
+	if (!collumn)
+	{
+>>>>>>> parent of 201dd96 (WIP)
 		return;
 
 	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
