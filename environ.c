@@ -1,10 +1,8 @@
 #include "shell.h"
-
 /**
- * _myenv - prints the current environment
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0
+ * _myenv - check code.
+ * @info: Struct pointer
+ * Return: 0
  */
 int _myenv(info_t *info)
 {
@@ -13,33 +11,32 @@ int _myenv(info_t *info)
 }
 
 /**
- * _getenv - gets the value of an environ variable
- * @info: Structure containing potential arguments. Used to maintain
- * @name: env var name
- *
- * Return: the value
+ * _getenv - check code.
+ * @info: Struct pointer
+ * @name: constant car pointer
+ * Return: pointer value or NULL
  */
 char *_getenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
-	char *p;
+	char *pointer;
 
 	while (node)
 	{
-		p = starts_with(node->str, name);
-		if (p && *p)
-			return (p);
+		pointer = starts_with(node->str, name);
+		if (pointer && *pointer)
+		{
+			return (pointer);
+		}
 		node = node->next;
 	}
 	return (NULL);
 }
 
 /**
- * _mysetenv - Initialize a new environment variable,
- *             or modify an existing one
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: Always 0
+ * _mysetenv - check code.
+ * @info: Struct pointer
+ * Return: 1 or 0
  */
 int _mysetenv(info_t *info)
 {
@@ -49,44 +46,47 @@ int _mysetenv(info_t *info)
 		return (1);
 	}
 	if (_setenv(info, info->argv[1], info->argv[2]))
+	{
 		return (0);
+	}
 	return (1);
 }
 
 /**
- * _myunsetenv - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: Always 0
+ * _myunsetenv - check code.
+ * @info: Struct pointer
+ * Return: 1 or 0
  */
 int _myunsetenv(info_t *info)
 {
-	int i;
+	int count;
 
 	if (info->argc == 1)
 	{
 		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (i = 1; i <= info->argc; i++)
-		_unsetenv(info, info->argv[i]);
-
+	for (count = 1; count <= info->argc; count++)
+	{
+		_unsetenv(info, info->argv[count]);
+	}
 	return (0);
 }
 
 /**
- * populate_env_list - populates env linked list
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0
+ * populate_env_list - check code.
+ * @info: Struct pointer
+ * Return: 0
  */
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
-	size_t i;
+	size_t count;
 
-	for (i = 0; environ[i]; i++)
-		add_node_end(&node, environ[i], 0);
+	for (count = 0; environ[count]; count++)
+	{
+		add_node_end(&node, environ[count], 0);
+	}
 	info->env = node;
 	return (0);
 }
